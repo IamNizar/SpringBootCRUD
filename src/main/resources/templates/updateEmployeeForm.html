@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Update Page</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h2> Employee Update Form</h2>
+    <hr>
+<form action="#" th:action="@{/addEmployee}" th:object="${employee}" th:method="POST">
+    <input type="hidden" th:field="*{id}">
+    <input type="text" th:field="*{firstname}"
+           placeholder="Enter the firstname" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{lastname}"
+           placeholder="Enter the lastname" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{exp}"
+           placeholder="How many years of experience ?" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{email}"
+           placeholder="Enter the Email" class="form-control mb-4 col-4">
+    <button type="submit" class="btn btn-success col-2">Update Employer</button>
+</form>
+    <hr>
+    <a th:href="@{/}">Go back to Employees List</a>
+</div>
+</body>
+</html>

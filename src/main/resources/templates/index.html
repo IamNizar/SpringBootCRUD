@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees Management System</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<main>
+<div class="container my-2">
+    <h2>List of Employees</h2>
+    <a  th:href="@{/AddEmployeeForm}" class="btn btn-primary btn-sm mb-3" >Add Employee</a>
+<table border="1" class="table table-dark">
+    <thead class="thead-light">
+    <tr>
+     <th class="text-primary"> First Name</th>
+    <th class="text-primary">Last Name</th>
+    <th class="text-primary">Experience</th>
+    <th class="text-primary">Email</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : ${listOfEmployees}">
+        <td th:text ="${employee.firstname}"></td>
+        <td th:text ="${employee.lastname}"></td>
+        <td th:text ="${employee.exp}"></td>
+        <td th:text ="${employee.email}"></td>
+        <td><a th:href="@{/showEmployeeUpdateForm/{id}(id=${employee.getId()})}"
+               class="btn btn-primary">Update</a>
+        <a th:href="@{deleteEmployee/{id}(id=${employee.getId()})}"
+           class="btn btn-danger" >Delete</a></td>
+
+    </tr>
+    </tbody>
+
+</table>
+    </div>
+</main>
+</body>
+</html>

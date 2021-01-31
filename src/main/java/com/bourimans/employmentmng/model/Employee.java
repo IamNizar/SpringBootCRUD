@@ -29,4 +29,7 @@ public class Employee {
     @Email(regexp = "^(.+)@(.+)$",message = "Invalid email pattern")
     @NotEmpty(message = "Email should not be empty")
     private String email;
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinColumn(name = "dept_fk")
+    private Departement departement;
 }

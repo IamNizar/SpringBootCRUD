@@ -27,6 +27,11 @@
     <input th:type="text" th:field="*{email}"
            placeholder="Enter the Email" class="form-control mb-4 col-4">
     <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger"></p>
+   <select name="DepartemntList" th:field="*{departement}">
+       <option th:each="Departementlist :${deptList}" th:text="${Departementlist.getDeptname()}"
+               th:value="${Departementlist.getId()}"/>
+   </select>
+</br>
     <button type="submit" class="btn btn-success col-2">Add New Employer</button>
 </form>
     <hr>

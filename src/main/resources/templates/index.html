@@ -21,6 +21,7 @@
     <th class="text-primary">Last Name</th>
     <th class="text-primary">Experience</th>
     <th class="text-primary">Email</th>
+        <th class="text-primary">Department</th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -30,6 +31,7 @@
         <td th:text ="${employee.lastname}"></td>
         <td th:text ="${employee.exp}"></td>
         <td th:text ="${employee.email}"></td>
+        <td th:text="${employee.departement.getDeptname()}"></td>
         <td><a th:href="@{/showEmployeeUpdateForm/{id}(id=${employee.getId()})}"
                class="btn btn-primary">Update</a>
         <a th:href="@{deleteEmployee/{id}(id=${employee.getId()})}"

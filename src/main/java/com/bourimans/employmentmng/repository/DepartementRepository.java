@@ -12,7 +12,4 @@ public interface DepartementRepository extends JpaRepository<Departement,Integer
     @Query(value = "select * from Departement", nativeQuery = true)
     List<Departement> LoadDeptList();
 
-   /* @Query(value = "select d from Departement d where d.id=:dept_id")
-    Departement DepartementByEmployeeId(@Param("dept_id") int id);*/
-
 }

@@ -50,7 +50,6 @@ private DepartementRepository departementRepository;
     public String showEmployeeUpdateView(@PathVariable(value = "id") long id,Model model){
     Employee employee = employeeService.getEmployeeByID(id);
     passdepartement = employee.getDepartement();
-  //  System.out.println("This fk"+employee.getDepartement().getId());
     model.addAttribute("employee",employee);
     return "updateEmployeeForm";
     }
